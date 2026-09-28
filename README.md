@@ -2,33 +2,29 @@
 
 Site statique de l'Association Française de Da Cheng Chuan et de Traditions Martiales Chinoises (AFDCCTMC).
 
-Recréé à partir de l'export Webflow, en HTML/CSS/JS sans dépendance.
+Recréé à partir du site Webflow (export + contenu CMS de dachengchuanparis.webflow.io), en HTML/CSS/JS sans dépendance.
 
 ## Structure
 
 ```
-index.html          Accueil
-latest-posts.html   Nouveautés
-a-propos.html       À propos
-404.html            Page introuvable
-css/style.css       Styles
-js/main.js          Menu mobile et animations
-images/             Logos, favicon, illustrations
+index.html              Accueil (article à la une + 8 derniers articles)
+latest-posts.html       Nouveautés (tous les articles)
+a-propos.html           À propos
+posts/*.html            Articles
+category/*.html         Pages de catégorie
+team-members/*.html     Pages auteur
+404.html                Page introuvable
+css/style.css           Styles
+js/main.js              Menu mobile et animations
+images/                 Logos, favicon, illustrations
+images/cms/             Images des articles
 ```
 
 ## Ajouter un article
 
-Dans `index.html` et `latest-posts.html`, ajoutez une carte dans `<div class="posts-grid">` puis supprimez le bloc `<div class="empty-state">` :
-
-```html
-<article class="post-card">
-  <a href="mon-article.html">
-    <img src="images/mon-image.jpg" alt="Description de l'image">
-    <span class="section-title-text">Catégorie</span>
-    <h3>Titre de l'article</h3>
-  </a>
-</article>
-```
+1. Copiez un fichier existant de `posts/` (par ex. `posts/travail-de-los.html`) sous un nouveau nom et modifiez le titre, la catégorie, l'image et le contenu de `<div class="rich-text">`.
+2. Placez les images dans `images/cms/`.
+3. Ajoutez une carte `<article class="post-card">…</article>` (copiez-en une existante) en tête de la grille dans `index.html`, `latest-posts.html`, la page de catégorie concernée et la page auteur.
 
 ## Hébergement
 
