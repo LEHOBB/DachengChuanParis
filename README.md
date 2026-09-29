@@ -1,8 +1,6 @@
 # Da Cheng Chuan Paris
 
-Site statique de l'Association Française de Da Cheng Chuan et de Traditions Martiales Chinoises (AFDCCTMC).
-
-Recréé à partir du site Webflow (export + contenu CMS de dachengchuanparis.webflow.io), en HTML/CSS/JS sans dépendance.
+Site de l'Association Française de Da Cheng Chuan et de Traditions Martiales Chinoises (AFDCCTMC).
 
 ## Structure
 
