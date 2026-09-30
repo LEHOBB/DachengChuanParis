@@ -307,6 +307,31 @@ a {
   padding-bottom: 60px;
 }
 
+.home-intro {
+  max-width: 820px;
+  margin-bottom: 60px;
+}
+
+.home-title {
+  margin: 0 0 20px;
+  color: var(--black);
+  font-family: var(--font-title);
+  font-size: 54px;
+  font-weight: 400;
+  line-height: 60px;
+  text-transform: uppercase;
+}
+
+.home-intro .lead {
+  margin: 0;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+h2.section-title-text {
+  margin-top: 0;
+}
+
 .hero-inner {
   display: flex;
   align-items: center;
@@ -827,6 +852,11 @@ a.post-author:hover {
 /* ---------- Responsive ---------- */
 
 @media screen and (max-width: 991px) {
+  .home-title {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
   .menu-button {
     display: block;
   }
@@ -949,6 +979,15 @@ a.post-author:hover {
 }
 
 @media screen and (max-width: 479px) {
+  .home-title {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .home-intro {
+    margin-bottom: 40px;
+  }
+
   .section,
   .separator,
   .footer {
