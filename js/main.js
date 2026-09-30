@@ -25,6 +25,30 @@
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
+  // Stages : dates passées grisées, prochain stage mis en avant
+  var today = new Date();
+  var todayIso = today.getFullYear() + "-" + String(today.getMonth() + 1).padStart(2, "0") + "-" + String(today.getDate()).padStart(2, "0");
+  var nextFound = false;
+  document.querySelectorAll(".stage-date").forEach(function (li) {
+    var d = li.getAttribute("data-date");
+    if (d < todayIso) {
+      li.classList.add("is-past");
+    } else if (!nextFound) {
+      nextFound = true;
+      li.classList.add("is-next");
+    }
+  });
+  var mois = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+  document.querySelectorAll("[data-next-stage]").forEach(function (el) {
+    var next = el.getAttribute("data-dates").split(" ").filter(function (d) { return d >= todayIso; })[0];
+    if (next) {
+      var p = next.split("-");
+      el.textContent = "Prochain stage : dimanche " + Number(p[2]) + " " + mois[Number(p[1]) - 1] + " " + p[0];
+    } else {
+      el.textContent = "Les dates de la prochaine saison arrivent bientôt.";
+    }
+  });
+
   // Newsletter (Brevo) : envoi sans quitter la page
   var form = document.querySelector(".newsletter-form");
   if (form && window.fetch && window.FormData) {
