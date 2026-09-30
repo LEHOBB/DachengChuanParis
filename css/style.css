@@ -744,7 +744,60 @@ a.post-author:hover {
 }
 
 .rich-text p {
-  margin: 15px 0;
+  margin: 0 0 18px;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  text-wrap: pretty;
+}
+
+.rich-text h2 {
+  margin: 50px 0 20px;
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  text-transform: uppercase;
+  text-wrap: balance;
+  hyphens: manual;
+}
+
+.rich-text h2:first-child {
+  margin-top: 0;
+}
+
+.rich-text ol.programme,
+.rich-text ul.dates-list {
+  margin: 0 0 24px;
+  padding-left: 1.6em;
+}
+
+.rich-text ol.programme {
+  list-style: upper-roman;
+}
+
+.rich-text ol.programme > li {
+  margin: 14px 0 4px;
+  padding-left: 6px;
+  font-weight: 700;
+}
+
+.rich-text ol.programme ul {
+  margin: 4px 0 0;
+  padding-left: 1.2em;
+  font-weight: 400;
+  list-style: "– ";
+}
+
+.rich-text ol.programme ul li,
+.rich-text ul.dates-list li {
+  margin: 2px 0;
+  padding-left: 4px;
+}
+
+.rich-text ul.dates-list {
+  list-style: "– ";
 }
 
 .rich-text figure {
@@ -762,16 +815,14 @@ a.post-author:hover {
 }
 
 .rich-text blockquote {
-  margin: 30px 0 20px;
-  padding-top: 20px;
-  border-top: 2px solid var(--black);
-  font-family: var(--font-ui);
-  font-size: 22px;
-  line-height: 32px;
-}
-
-.rich-text blockquote + blockquote {
-  margin-top: 0;
+  margin: 24px 0 28px;
+  padding: 4px 0 4px 24px;
+  border-left: 3px solid var(--bleu);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 28px;
+  text-align: left;
+  hyphens: manual;
 }
 
 .rich-text code {
@@ -1074,6 +1125,10 @@ a.post-author:hover {
 }
 
 @media screen and (max-width: 767px) {
+  .rich-text p {
+    text-align: left;
+  }
+
   .stage-infos,
   .stage-dates {
     grid-template-columns: 1fr;
@@ -1195,4 +1250,8 @@ a.post-author:hover {
     padding-top: 60px;
     padding-bottom: 60px;
   }
+}
+
+.nw {
+  white-space: nowrap;
 }
